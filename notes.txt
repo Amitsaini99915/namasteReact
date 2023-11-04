@@ -1,0 +1,10 @@
+Q.1 ==> what is Emmet in vscode ?
+Q.2 ==> what is cdn? why do we use it ? research more about it is home work 
+ANS==> cdn is like where react is hosted and we are fetch it from there using the cdn link in our websites
+Q.3 ==> what is crossorigion. why we use it?
+
+package.json ==> is configration to npm 
+
+
+what is dev dependency and normal dependency
+
