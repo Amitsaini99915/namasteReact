@@ -6,5 +6,19 @@ Q.3 ==> what is crossorigion. why we use it?
 package.json ==> is configration to npm 
 
 
+what is bunddler ?
+
 what is dev dependency and normal dependency
+
+lecture 2 
+
+for sending our app for the production we have to optimize the code,file and image of the code
+
+what is bunddler?why we use them
+what is npm? 
+what is dev dependency and normal dependency?
+
+dev dependency which is use in the developent of the app
+
+normal dependency is which used in production
 
