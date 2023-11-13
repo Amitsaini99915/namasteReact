@@ -2,8 +2,9 @@
   "name": "lecture_1",
   "version": "1.0.0",
   "description": "This is namaste react first lecture_1",
-  "main": "App.js",
   "scripts": {
+    "start":"parcel index.html",
+    "build":"parcel build index.html",
     "test": "jest"
   },
   "keywords": [
@@ -13,6 +14,14 @@
   "author": "amit",
   "license": "ISC",
   "devDependencies": {
-    "parcel": "^2.10.2"
-  }
+    "parcel": "^2.10.2",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserlist":[
+    "last 2 versions"
+  ]
 }

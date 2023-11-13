@@ -1,3 +1,113 @@
-#heading{
-    color: red;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+.navbar_wrapper{
+    box-shadow: 0 15px 40px -20px rgba(40,44,63,.5);
+    padding: 10px;   
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 999;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    width: 134px;
+
+}
+.logo_image{
+    width: 100%;
+}
+.navbar .nav_list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    list-style-type: none;
+}
+.navbar .nav_list li a{
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+}
+.content{
+    padding-top: 64px;
+}
+.card_container{
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+   
+    /* flex-wrap: wrap; */
+}
+.card_container .card:hover{
+    transform: scale(.97);
+}
+.card_container .card{
+    padding: 20px;
+    transition: all .3s;
+}
+.card_container .card img{
+    width: 100%;
+    border-radius: 16px;
+    height: 180px;
+    object-fit: cover;
+}
+.card_container .card .card_content {
+    padding-top: 10px;
+}
+.card_container .card .name {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.75);
+    overflow: hidden;
+    width: 100%;
+}
+.card_container .rating_time{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.75);
+    overflow: hidden;
+    width: 100%;
+}
+.cousin,.address{
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 19px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.6);
+}
+.filter-btn{
+    border-radius: 18px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(226, 226, 231);
+    padding: 9px 12px;
+    display: inline-grid;
+    width: max-content;
+    grid-auto-flow: column;
+    gap: 8px;
+    box-shadow: rgba(2, 6, 12, 0.04) 0px 2px 12px;
+    transition: all 100ms ease-in 0s;
+    margin-top: 20px;
+    cursor: pointer;
 }
