@@ -3,6 +3,9 @@
     margin: 0;
     box-sizing: border-box;
 }
+a:-webkit-any-link {
+text-decoration: none;
+}
 .container{
     max-width: 1200px;
     width: 100%;
@@ -16,6 +19,7 @@
     left: 0px;
     width: 100%;
     z-index: 999;
+    background-color: #fff;
 }
 .header{
     display: flex;
@@ -30,6 +34,7 @@
 .logo_image{
     width: 100%;
 }
+
 .navbar .nav_list{
     display: flex;
     align-items: center;
@@ -52,27 +57,53 @@
     justify-content: center;
     gap: 20px; */
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4,1fr);
+    gap: 40px;
    
     /* flex-wrap: wrap; */
 }
-.card_container .card:hover{
+.card_image.relative{
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+}
+.card_image.relative .item_offer{
+    position: absolute;
+    bottom: 0px;
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 22px;
+    letter-spacing: -0.5px;
+    color: rgba(255, 255, 255, 0.92);
+    overflow: hidden;
+    width: 100%;
+    width: 100%;
+    height: 81px;
+    
+    background: linear-gradient(rgba(27, 30, 36, 0) 0%, rgb(27, 30, 36) 84.21%);
+}
+.offer_text {
+    position: absolute;
+    bottom: 16px;
+    left: 10px;
+}
+.card_wrapper .card:hover{
     transform: scale(.97);
 }
-.card_container .card{
-    padding: 20px;
+.card_wrapper .card{
+    /* padding: 20px; */
     transition: all .3s;
 }
-.card_container .card img{
+.card_wrapper .card img{
     width: 100%;
     border-radius: 16px;
     height: 180px;
     object-fit: cover;
 }
-.card_container .card .card_content {
+.card_wrapper .card .card_content {
     padding-top: 10px;
 }
-.card_container .card .name {
+.card_wrapper .card .name {
     font-size: 18px;
     font-weight: 700;
     line-height: 24px;
@@ -81,7 +112,7 @@
     overflow: hidden;
     width: 100%;
 }
-.card_container .rating_time{
+.card_wrapper .rating_time{
     font-size: 16px;
     font-weight: 700;
     line-height: 19px;
@@ -90,12 +121,21 @@
     overflow: hidden;
     width: 100%;
 }
+
 .cousin,.address{
     font-size: 16px;
     font-weight: 200;
     line-height: 19px;
     letter-spacing: -0.3px;
     color: rgba(2, 6, 12, 0.6);
+}
+.filter_btn_wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 16px 0;
 }
 .filter-btn{
     border-radius: 18px;
@@ -108,6 +148,225 @@
     gap: 8px;
     box-shadow: rgba(2, 6, 12, 0.04) 0px 2px 12px;
     transition: all 100ms ease-in 0s;
-    margin-top: 20px;
+    
     cursor: pointer;
+}
+
+.shimmerCard{
+    /* border: 1px solid #ddd; */
+    border-radius: 16px;
+    /* margin: 10px; */
+}
+.shimmerCard .card_image{
+    width: 260px;
+    height: 180px;
+    background: #e7e7e7;
+    border-radius: 30px;
+}
+.shimmerCard .card_content .name{
+    width: 160px;
+    height: 21px;
+    background: #e7e7e7;
+    margin-bottom: 4px;
+}
+.shimmerCard .card_content .rating_time{
+    width: 90px;
+    height: 21px;
+    background: #e7e7e7;
+    margin-bottom: 4px;
+}
+.shimmerCard .card_content{
+    padding-top: 20px!important;
+}
+.shimmerCard .card_content .cousin{
+    width: 60px;
+    height: 18px;
+    background: #e7e7e7;
+    margin-bottom: 4px;
+}
+.shimmerCard .card_content .address{
+    width: 50px;
+    height: 18px;
+    background: #e7e7e7;
+    margin-bottom: 4px;
+}
+
+/* shimmer card for banner */
+
+.card_container_banner{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 16px;
+    margin-bottom: 10px;
+}
+.card_container_banner .card_1{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.card_container_banner .card_2{
+    grid-column-start: 3;
+    grid-column-end: 5;
+}
+.card_container_banner .card_3{
+    grid-column-start: 5;
+    grid-column-end: 6;
+    border-radius: 16px 0px 0 16px;
+}
+.card_container_banner .card_3 .card_image{
+    border-radius: 30px 0px 0 30px;
+}
+.card_container_banner .card_image{
+    width: 100%;
+    height: 300px;
+}
+.top_res .card{
+    margin-right: 16px;
+}
+
+.shimmercardheading{
+    width: 40%;
+    background-color: #e7e7e7;
+    height: 30px;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+.shimmer_heading_section,.shimmer_heading_section .button_wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.shimmer_heading_section .button_wrapper{
+    gap: 10px;
+}
+.shimmer_heading_section .button_wrapper div{
+    width: 40px;
+    height: 40px;
+    background-color: #e7e7e7;
+    border-radius: 50%;
+}
+
+
+
+/* resturant menu css  */
+.resturant_menu.container{
+    max-width: 800px;
+}
+.resturant_menu {
+    margin-top: 60px;
+}
+.resturant_menu .heading{
+    color: #535665;
+    font-weight: 400;
+    font-size: 1.43rem;
+    font-weight: 600;
+    color: #282c3f;
+    margin-bottom: 8px;
+    text-transform: capitalize;
+}
+
+.carousel_img{
+    padding-right: 16px;
+    
+}
+.carousel_img img{
+    width: 100%;
+}
+.react-multi-carousel-list{
+    position: static;
+}
+/* carousel css  */
+.carousel h2{
+    margin-bottom: 16px;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 28px;
+    letter-spacing: -0.4px;
+    color: rgba(2, 6, 12, 0.92);
+}
+.carousel_wrapper{
+    position: relative;
+    margin-top: 16px;
+}
+.carousel_heading{
+    position: absolute;
+    top: 0px;
+}
+
+
+@media only screen and (min-width:300px)  and (max-width: 480px) {
+    .card_container{
+        grid-template-columns: repeat(1, 1fr);
+    padding: 20px;
+    }
+}
+@media only screen and (min-width:480px)  and (max-width: 768px) {
+
+    .card_container{
+        grid-template-columns: repeat(2, 1fr);
+    padding: 20px;
+    }
+}
+@media only screen and (min-width:768px)  and (max-width: 1024px) {
+    .card_container{
+        grid-template-columns: repeat(3, 1fr);
+    padding: 20px;
+    }
+    
+}
+@media only screen and (min-width:1024px)  and (max-width: 1200px) {
+    .card_container{
+        grid-template-columns: repeat(3, 1fr);
+    padding: 20px;
+    }
+}
+
+.react-multi-carousel-list{
+    padding-top: 50px;
+}
+.react-multiple-carousel__arrow{
+    top: 0px;
+    z-index: 100!important;
+}
+.react-multiple-carousel__arrow--left{
+    left:calc(100% - 120px)!important;
+}
+.react-multiple-carousel__arrow--right {
+    right: calc(2% + 1px)!important;
+}
+
+
+.flex_class_between{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.price_offer{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.offers-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+}
+.resturant_containe{
+    max-width: 800px;
+}
+.breadcrum{
+    font-size: 10px;
+    color: #93959f;
+    line-height: 16px;
+    margin: 20px 0;
+}
+.item_heading{
+    font-size: 20px;
+    font-weight: 600;
+    color: #282c3f;
+    margin-bottom: 8px;
+    text-transform: capitalize;
+}
+.mt-70{
+    margin-top: 70px;
 }
