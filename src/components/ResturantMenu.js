@@ -2,11 +2,10 @@ import { useParams } from "react-router-dom";
 import useResturantMenu from "../utiles/useResturantMenu";
 import ResturantAccordionTitle from "./ResturantAccordionTitle";
 import { useState } from "react";
-// import ResturantAccordionTitle from "./ResturantAccordionTitle";
 
 const ResturantMenu = () => {
   let { restId } = useParams();
-  const [AccordionOpen, setAccordionOpen] = useState(0)
+  const [accordionOpen, setAccordionOpen] = useState(0)
 
   const restMenu = useResturantMenu(restId);
  
@@ -26,9 +25,9 @@ const ResturantMenu = () => {
       }
     );
 
-  return ( !restMenu?"fetching data" :
+  return ( !restMenu ? "Loading restaurant data..." :
     <>
-      <div className="container content resturant_containe max-w-[800px] mx-auto pt-4">
+      <div className="container content resturant_containe max-w-[840px] mx-auto pt-4">
         <div className="breadcrum text-[10px] text-gray-400">
           Home/city/rest
         </div>
@@ -65,18 +64,18 @@ const ResturantMenu = () => {
             {restMenu?.cards[0]?.card?.card?.info?.costForTwoMessage}
           </div>
         </div>
-        <div className="offers-wrapper flex items-center justify-start gap-5">
+        <div className="offers-wrapper flex items-start justify-start gap-1  ">
           {offer_Section?.map((item, index) => {
             // console.log(item);
             return (
               <div
                 key={index}
-                className="offers max-w-[200px] border-[1px] px-4 py-2 border-solid border-[#d3d3d3] flex items-center justify-center flex-col"
+                className="offers max-w-[200px]  w-full border-[1px] p-1 border-solid border-[#d3d3d3] rounded-md flex items-center justify-center flex-col"
               >
-                <div>{item?.info?.header}</div>
+                <div className="text-sm leading-[15px] font-semibold">{item?.info?.header}</div>
                 <div >
-                  <span className="text-sm ">{item?.info?.description}</span>
-                  <span className="text-sm ">{item?.info?.couponCode}</span>
+                  <span className="text-[10px] ">{item?.info?.description}</span>
+                  <span className="text-[10px] ">{item?.info?.couponCode}</span>
                 </div>
               </div>
             );
@@ -85,10 +84,11 @@ const ResturantMenu = () => {
         <div className="">
           {categories?.map((item,index) => {
             return (
-                <ResturantAccordionTitle showItem={ index === AccordionOpen} key={index} item= {item}
+              <>
+                <ResturantAccordionTitle showItem={ index === accordionOpen} key={index} item= {item}
                 setAccordionOpen={
                   ()=>{
-                    if (AccordionOpen === index) {
+                    if (accordionOpen === index) {
                       setAccordionOpen();
                     }
                     else{
@@ -97,6 +97,7 @@ const ResturantMenu = () => {
                   }
                 }
                 />
+                </>
             );
           })}
         </div>

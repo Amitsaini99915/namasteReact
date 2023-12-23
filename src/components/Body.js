@@ -60,10 +60,7 @@ const Body = () => {
     setRestList(
       json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
-    setRestList(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
-      ?.restaurants
-    );
+    
     console.log(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants,
