@@ -1,41 +1,46 @@
-import { useState } from 'react';
-import logo from '../../assets/images/Swiggy_logo.png'
-import { Link } from 'react-router-dom';
+import { useState } from "react";
+import logo from "../../assets/images/Swiggy_logo.png";
+import { Link } from "react-router-dom";
+import UserContext from "../utiles/UserContext";
+import { useContext } from "react";
 
 const Header = () => {
-    const [userDetail, setUserDetail] = useState("login");
-    // const [searchintput , setSearchInput] = useState("")
-    console.log("rerander header")
-    return(
-        <div className="navbar_wrapper">
-            <div className="header container">
-                <div className="logo">
-                    <img className='logo_image' src={logo} alt="" />
-                </div>
-                {/* <div className="search_bar">
-                    <input type="text" value={searchintput} onChange={(e)=>setSearchInput(e.target.value)} />
-                    <button onClick={()=>{
-                        console.log(searchintput,"searchintput")
-                    }}>search</button>
-                </div> */}
-                <div className="navbar">
-                    <ul className='nav_list'>
-                    <li><Link to="/">Home</Link></li>
-                        <li><Link to="/about">About</Link></li>
-                        <li><Link to="/contact">Contact</Link></li>
-                        
-                        {/* <li><a href="">Search</a></li>
-                        <li><a href="">Offers</a></li>
-                        <li><a href="">Help</a></li>
-                        <li><a href="">Sign In</a></li>
-                        <li><a href="">Cart</a></li> */}
-                        <button onClick={()=>{
-                            userDetail ==="login"?setUserDetail("logout"):setUserDetail("login");
-                        }}>{userDetail}</button>
-                    </ul>
-                </div>
-            </div>
+  const [userDetail, setUserDetail] = useState("login");
+  const data = useContext(UserContext);
+  // const { setUserName } = useContext(UserContext);
+  // setUserName("user");
+  console.log(data, "datadatadatadata");
+  console.log("header");
+  return (
+    <div className="navbar_wrapper shadow">
+      <div className="flex items-center justify-between container mx-auto py-2 px-4 max-w-[1200px]">
+        <div className="logo w-56">
+          <img className="logo_image w-full" src={logo} alt="" />
         </div>
-    )
-}
-export default Header
+        
+        <ul className="nav_list flex items-center justify-center">
+          <li className="px-4 py-2 hover:font-bold">
+            <Link to="/">Home</Link>
+          </li>
+          <li className="px-4 py-2 hover:font-bold">
+            <Link to="/about">About</Link>
+          </li>
+          <li className="px-4 py-2 hover:font-bold">
+            <Link to="/contact">Contact</Link>
+          </li>
+          <button
+            onClick={() => {
+              userDetail === "login"
+                ? setUserDetail("logout")
+                : setUserDetail("login");
+            }}
+          >
+            {userDetail}
+          </button>
+          <li className="px-4 py-2 font-bold">{data.loginDate}</li>
+        </ul>
+      </div>
+    </div>
+  );
+};
+export default Header;

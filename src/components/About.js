@@ -1,6 +1,6 @@
 import UserClass from "./UserClass";
 import {Component} from "react";
-
+import UserContext from "../utiles/UserContext";
 // import User from "./user";
 class About extends Component{
     constructor(){
@@ -14,6 +14,7 @@ class About extends Component{
         console.log("parent render call")
         return (
             <div className="container content">
+            
                 <UserClass name = {"Amit saini class"} />
                 
             </div>
