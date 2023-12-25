@@ -3,10 +3,15 @@ import logo from "../../assets/images/Swiggy_logo.png";
 import { Link } from "react-router-dom";
 import UserContext from "../utiles/UserContext";
 import { useContext } from "react";
+import { useSelector } from "react-redux";
+
 
 const Header = () => {
   const [userDetail, setUserDetail] = useState("login");
   const data = useContext(UserContext);
+  const cartItem = useSelector((store) => store.cart.items)
+
+  console.log(cartItem,"cartItemcartItemcartItemcartItem")
   // const { setUserName } = useContext(UserContext);
   // setUserName("user");
   console.log(data, "datadatadatadata");
@@ -27,6 +32,9 @@ const Header = () => {
           </li>
           <li className="px-4 py-2 hover:font-bold">
             <Link to="/contact">Contact</Link>
+          </li>
+          <li className="px-4 py-2 font-bold hover:font-bold">
+            <Link to="/cart ">cart - ({cartItem.length})</Link>
           </li>
           <button
             onClick={() => {

@@ -6,11 +6,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Link } from "react-router-dom";
 
-import {
-  responsive,
-  responsive_mind,
-  responsive_chain,
-} from "./../utiles/bannerCarousel";
+import {  responsive,  responsive_mind,  responsive_chain} from "./../utiles/bannerCarousel";
 import ShimmerCardBanner from "./ShimmerCardBanner";
 import BannerCarouel from "./Carousel/BannerCarousel";
 import useOnlineStatus from "../utiles/useOnlineStatus";
@@ -61,34 +57,15 @@ const Body = () => {
       json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     
-    console.log(
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants,
-      "json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants"
-    );
-    console.log(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants,
-      "json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants"
-    );
-    console.log(
-      json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants,
-      "json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants"
-    );
-    console.log(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants,
-      "json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants"
-    );
-    console.log(
-      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants,
-      "json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants"
-    );
     setRestListFilter(
       json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
+    console.log(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.info,"json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants");
+    console.log( json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants,"json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants");
+    console.log(json.data.cards[3],"json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants");
+    console.log(json.data.cards[4].card.card,"json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants");
+    console.log(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants,"json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants");
+    console.log(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants,"json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants");
   };
 
  
@@ -212,15 +189,6 @@ const Body = () => {
               </button>
             );
           })}
-
-        {/* {filterBtn &&
-            filterBtn?.sortConfigs.map((element) => {
-              return (
-                <button key={element.key} className="filter-btn">
-                  {element.title}
-                </button>
-              );
-            })} */}
         <div className="search_bar">
           <input
             type="text"
@@ -236,7 +204,6 @@ const Body = () => {
                   .toLowerCase()
                   .includes(searchintput.toLowerCase());
               });
-              // console.log(restalistData,"aaa")
               setRestList(restalistData);
             }}
           >
@@ -244,14 +211,12 @@ const Body = () => {
           </button>
         </div>
       </div>
-{console.log(restalist,"restalist")}
       {restalist?.length === 0 ? (
         <ShimmerCard />
       ) : (
         <div className="card_container card_wrapper container max-w-[1200px] mx-auto">
           <div className="grid grid-cols-4 gap-8">
             {restalist?.map((resdata) => {
-              // console.log("resdata", resdata);
               return (
                 <Link
                   className=""

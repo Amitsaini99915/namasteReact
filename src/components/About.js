@@ -1,7 +1,7 @@
 import UserClass from "./UserClass";
 import {Component} from "react";
-import UserContext from "../utiles/UserContext";
-// import User from "./user";
+
+// class base component 
 class About extends Component{
     constructor(){
         super();
@@ -22,13 +22,4 @@ class About extends Component{
     }
 }
 
-
-
-// const About = ()=>{
-//     return (
-//         <div className="container content">
-//             <UserClass name = {"Amit saini class"} />
-//         </div>
-//     )
-// }
 export default About;

@@ -29,7 +29,7 @@ export const withPromotedLabel = (RestaurantCard)=>{
     return(props)=>{
         return (
             <div className="relative group">
-                <label className="group-hover:scale-95 absolute top-0 right-0 z-50 bg-blue-600 text-white w-[100px] py-2 text-center">veg</label>
+                {/* <label className="group-hover:scale-95 absolute top-0 right-0 z-50 bg-blue-600 text-white w-[100px] py-2 text-center">veg</label> */}
                 <RestaurantCard {...props}/>
             </div>
         )
