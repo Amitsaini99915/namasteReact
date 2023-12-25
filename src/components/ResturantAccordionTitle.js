@@ -1,5 +1,4 @@
 import ResturantAccordionItem from "./ResturantAccordionItem";
-import ItemList from "./itemList";
 
 const ResturantAccordionTitle = ({  showItem ,item, setAccordionOpen}) => {
     const handleAccordion =()=>{
