@@ -11,14 +11,14 @@ export default function ShimmerCardBanner({}) {
           
         </div>
       </div>
-      <div className="card_container_banner grid grid-cols-5 gap-4 mt-4">
-        <div className="card_1  shimmerCard h-[300px] col-span-2">
+      <div className="card_container_banner grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
+        <div className="card_1  shimmerCard h-[250px] col-span-2">
           <div className="card_image bg-gray-200 w-full h-full rounded-2xl"></div>
         </div>
-        <div className="card_2 shimmerCard h-[300px] col-span-2">
+        <div className="card_2 shimmerCard h-[250px] col-span-2">
           <div className="card_image bg-gray-200 w-full h-full rounded-2xl"></div>
         </div>
-        <div className="card_3 shimmerCard h-[300px] col-span-1">
+        <div className="card_3 shimmerCard h-[250px]col-span-0  lg:col-span-1">
           <div className="card_image bg-gray-200 w-full h-full rounded-tl-2xl rounded-bl-2xl"></div>
         </div>
       </div>

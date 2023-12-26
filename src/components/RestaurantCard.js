@@ -1,19 +1,21 @@
+import { MdStars } from "react-icons/md";
+
 const RestaurantCard =({restdata,src})=>{
     const data = restdata.info
     return(
         <div className="card rounded-2xl hover:scale-95 transition-all duration-300 ease-out">
-            {/* {console.log(data,"data")} */}
+            {console.log(data,"data")}
             <div className="card_image relative">
-                <img className='res-img rounded-2xl h-full w-full max-h-[190px]' src={`${src}/${data.cloudinaryImageId}`} alt="" />
+                <img className='res-img rounded-2xl h-full w-full max-h-[190px] object-cover' src={`${src}/${data.cloudinaryImageId}`} alt="" />
                 <div className="item_offer absolute bottom-0 left-0 w-full text-center h-[81px] bg-gradient-to-b from-transparent to-black rounded-2xl">
                     <div className="offer_text text-lg font-bold text-white absolute bottom-2 w-full text-center">
                         {data?.aggregatedDiscountInfoV3?.header}{data?.aggregatedDiscountInfoV3?.subHeader}
                     </div>
                 </div>
             </div>
-            <div className="card_content">
+            <div className="card_content py-2">
                 <div className="name text-lg font-bold text-[#02060cbf]">{data.name}</div>
-                <div className="rating_time text-base font-bold text-[#02060cbf]">{data.avgRatingString} .{data.sla.slaString}</div>
+                <div className="rating_time text-base font-bold text-[#02060cbf]"><MdStars className="inline-block text-xl text-[#60b246]"/> {data.avgRatingString} .{data.sla.slaString}</div>
                 <div className="cousin text-base font-normal text-[#02060c99]">{data.cuisines.join(" , ")}</div>
                 <div className="address text-base font-normal text-[#02060c99]">{data.locality} ,{data.areaName}</div>
             </div>
